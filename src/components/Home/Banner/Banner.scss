@@ -1,0 +1,100 @@
+@import "../../../css-config/mixins.scss";
+
+.banner {
+  padding: 40px 0;
+  position: relative;
+  background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  height: calc(100vh - 80px);
+  @include md {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+    @include md {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+  }
+
+  .banner__img {
+    position: relative;
+    z-index: 1;
+    width: 480px;
+    height: auto;
+    margin: 50px 60px 0 0;
+    @include lg {
+      margin: 0;
+      width: 40%;
+    }
+    @include md {
+      margin: 0;
+      width: 50%;
+    }
+    @include sm {
+      margin: 0;
+      width: 40%;
+    }
+  }
+
+    .text__content {
+      color: white;
+      text-align: center;
+      h1 {
+        text-transform: uppercase;
+        font-size: 120px;
+        font-weight: bold;
+        @include lg {
+          font-size: 100px;
+        }
+      
+        @include md {
+          font-size: 80px;
+        }
+      
+        @include sm {
+          font-size: 60px;
+        }
+      }
+      p {
+        font-size: 20px;
+        line-height: 145%;
+        margin-bottom: 40px;
+      }
+    } 
+
+    .ctas {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    } 
+             
+    .banner__cta {
+      display: flex;
+      text-transform: uppercase;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border: 1px solid #fff;
+      padding: 16px 40px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      @include md {
+        font-size: 14px;
+      }
+      &:hover {
+        background-color: #fff;
+        color: #212121;
+      }
+    }
+}
