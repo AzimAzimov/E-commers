@@ -52,7 +52,6 @@ const Header = () => {
 
   useEffect(() => {
     document.body.style.overflow = mobileMenu ? "hidden" : "unset"
-    document.body.style.paddingRight = mobileMenu ? "17px" : "unset"
   }, [mobileMenu])
 
   useEffect(() => {
@@ -62,7 +61,7 @@ const Header = () => {
 
   useEffect(() => {
     document.body.style.overflow = toggleSearch ? "hidden" : "unset"
-    document.body.style.paddingRight = toggleSearch ? "17px" : "unset"
+   document.body.style.paddingRight = toggleSearch ? "17px" : "unset"
   }, [toggleSearch])
 
   return (
@@ -72,7 +71,13 @@ const Header = () => {
           <HiOutlineMenu onClick={() => setMobileMenu(true)} className='menu__mobile'/>
           <nav className='navbar'>
             <ul className={`left ${mobileMenu ? "active" : ""}`}>
-              {mobileMenu && <MdOutlineClose onClick={() => setMobileMenu(false)} className='close'/>}
+              {mobileMenu && <div className="menu__header">
+                <p>Menu</p>
+                <div onClick={() => setMobileMenu(false)} className="close__menu">
+                  <MdOutlineClose />
+                  <span>close</span>
+                </div>
+              </div>}
               {data.map(item => (
                 <NavLink 
                   to={`${item.path}`} 
