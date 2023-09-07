@@ -100,6 +100,7 @@ const Search = ({ toggleSearch, setToggleSearch }) => {
               </div>
             </div>
             <div className="search__result__item">
+              <span/>
               <div className="search__item__img">
                 <img src={img} alt="img" />
               </div>
